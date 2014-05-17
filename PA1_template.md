@@ -131,6 +131,7 @@ corrected_activity$day <- as.factor(corrected_activity$day)
 ```
 
 
+Plot the panel plot comparing the average number of steps taken per 5-minute interval accross weekdays and weekends
 
 ```r
 weekday_interval_steps <- tapply(corrected_activity$steps[corrected_activity$day == 
@@ -148,11 +149,5 @@ plot(names(weekend_interval_steps), weekend_interval_steps, type = "l", main = "
 ```
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
-
-```r
-
-
-par(mfrow = c(1, 1))
-```
 
 

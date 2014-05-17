@@ -82,6 +82,7 @@ corrected_activity$day[weekdays(corrected_activity$date,abbreviate=TRUE) %in% c(
 corrected_activity$day<-as.factor(corrected_activity$day)
 ```
 
+Plot the panel plot comparing the average number of steps taken per 5-minute interval accross weekdays and weekends
 ```{r}
 weekday_interval_steps<-tapply(corrected_activity$steps[corrected_activity$day=="weekday"],corrected_activity$interval[corrected_activity$day=="weekday"],mean)
 weekend_interval_steps<-tapply(corrected_activity$steps[corrected_activity$day=="weekend"],corrected_activity$interval[corrected_activity$day=="weekend"],mean)
@@ -99,8 +100,5 @@ plot(names(weekend_interval_steps),weekend_interval_steps,
      xlab="interval",
      ylab="number of steps",
      col="blue")
-
-
-par(mfrow=c(1,1))
 ```
 
